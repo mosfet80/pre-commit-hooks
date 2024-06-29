@@ -15,7 +15,7 @@ Add this to your `.pre-commit-config.yaml`
 
 ```yaml
 -   repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.5.0  # Use the ref you want to point at
+    rev: v4.6.0  # Use the ref you want to point at
     hooks:
     -   id: trailing-whitespace
     # -   id: ...
@@ -50,6 +50,9 @@ Checks for a common error of placing code before the docstring.
 
 #### `check-executables-have-shebangs`
 Checks that non-binary executables have a proper shebang.
+
+#### `check-illegal-windows-names`
+Check for files that cannot be created on Windows.
 
 #### `check-json`
 Attempts to load all json files to verify syntax.
@@ -127,6 +130,9 @@ The following arguments are available:
 removes UTF-8 byte order marker
 
 #### `fix-encoding-pragma`
+
+_Deprecated since py2 is EOL - use [pyupgrade](https://github.com/asottile/pyupgrade) instead._
+
 Add `# -*- coding: utf-8 -*-` to the top of python files.
   - To remove the coding pragma pass `--remove` (useful in a python3-only codebase)
 

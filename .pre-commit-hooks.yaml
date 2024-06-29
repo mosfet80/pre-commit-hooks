@@ -40,6 +40,11 @@
     language: python
     types: [text, executable]
     stages: [commit, push, manual]
+-   id: check-illegal-windows-names
+    name: check illegal windows names
+    entry: Illegal windows filenames detected
+    language: fail
+    files: '(?i)((^|/)(CON|PRN|AUX|NUL|COM[1-9]|LPT[1-9])(\.|/|$)|:)'
 -   id: check-json
     name: check json
     description: checks json files for parseable syntax.
@@ -145,7 +150,7 @@
     language: python
     types: [text]
 -   id: fix-encoding-pragma
-    name: fix python encoding pragma
+    name: fix python encoding pragma (deprecated)
     description: 'adds # -*- coding: utf-8 -*- to the top of python files.'
     language: python
     entry: fix-encoding-pragma
